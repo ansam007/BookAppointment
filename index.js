@@ -8,11 +8,29 @@ btn.addEventListener('click', function(e) {
     }
     localStorage.setItem(obj.email, JSON.stringify(obj));
 
-    var outputList = document.querySelector('#item');
-    var listItem = document.createElement('li');
-    listItem.textContent = "Name: " + obj.name + " Email: " + obj.email + " Phone Number: " + obj.phonenumber;
-    outputList.appendChild(listItem);
-})
+    var ul = document.querySelector('#item');
+    var li = document.createElement('li');
+
+    var deleteBtn = document.createElement('button');
+    deleteBtn.id = "deleteButton";
+    deleteBtn.className = "deleteButton";
+    deleteBtn.appendChild(document.createTextNode('Delete'));
+
+    deleteBtn.addEventListener('click', function() {
+        deleteBtn.parentElement.remove();
+        localStorage.removeItem(obj.email);
+        });
+
+    var textContent = "Name: " + obj.name + " Email: " + obj.email + " Phone Number: " + obj.phonenumber;
+    li.textContent = textContent;
+    li.appendChild(deleteBtn);
+    ul.appendChild(li);
+});
+
+
+
+
+
 
 
 
