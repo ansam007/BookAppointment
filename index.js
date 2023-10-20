@@ -9,6 +9,8 @@ btn.addEventListener('click', function(e) {
 
     localStorage.setItem(obj.email, JSON.stringify(obj));
 
+//////////////////////////Store the user data in local Storage as an Object///////////////////////////////////////////
+
     var ul = document.querySelector('#item');
     var li = document.createElement('li');
 
@@ -17,15 +19,21 @@ btn.addEventListener('click', function(e) {
     deleteBtn.className = "deleteButton";
     deleteBtn.appendChild(document.createTextNode('Delete'));
 
+    //Add Delete Button//
+
     var editBtn = document.createElement('button');
     editBtn.id = "editButton";
     editBtn.className = "editButton";
     editBtn.appendChild(document.createTextNode('Edit'));
 
+    //Add Edit Button//
+
     deleteBtn.addEventListener('click', function() {
         deleteBtn.parentElement.remove();
         localStorage.removeItem(obj.email);
     });
+
+    //Add Event Listener to Delete Button//
 
     editBtn.addEventListener('click', function() {
         editBtn.parentElement.remove();
@@ -34,6 +42,8 @@ btn.addEventListener('click', function(e) {
         document.querySelector('#phonenumber').value = obj.phonenumber;
         localStorage.removeItem(obj.email);
     });
+     
+    //Add Event Listener to Edit Button//
 
     var textContent = "Name: " + obj.name + " Email: " + obj.email + " Phone Number: " + obj.phonenumber;
     li.textContent = textContent;
