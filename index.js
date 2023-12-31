@@ -16,7 +16,7 @@ btn.addEventListener('click', function (e) {
     deleteBtn.id = "deleteButton";
     deleteBtn.className = "deleteButton";
     deleteBtn.appendChild(document.createTextNode('Delete'));
-
+    
     // Create Edit Button
     var editBtn = document.createElement('button');
     editBtn.id = "editButton";
