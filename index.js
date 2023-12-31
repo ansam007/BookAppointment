@@ -23,7 +23,7 @@ btn.addEventListener('click', function (e) {
     editBtn.className = "editButton";
     editBtn.appendChild(document.createTextNode('Edit'));
 
-    // POST CALL // Add Data to CrudCrud//
+    // POST CALL // Add Data to CrudCrud //
     axios.post("https://crudcrud.com/api/117bc6685fee41a68213993960b9f35f/appointmentData", obj)
         .then((res) => {
             showOutput(res.data);
